@@ -14,8 +14,50 @@
 
 @implementation ViewController
 
+-(IBAction)buttonClear:(id)sender {
+    subviewFromTop.alpha = 0;
+    subviewFromBottom.alpha = 0;
+}
+
+-(IBAction)buttonViewFromTop:(id)sender {
+    
+    NSLog(@"Ejecutando buttonViewFromTop");
+    
+    
+    [UIView animateWithDuration:3 animations:^{
+        subviewFromTop.alpha =  0.5;
+        CGPoint p = subviewFromTop.center;
+        p.y = -[subviewFromTop frame].size.height/2;
+        subviewFromTop.center = p;
+        CGPoint p2 = subviewFromTop.center;
+        p2.y = [subviewFromTop frame].size.height/2;
+        subviewFromTop.center = p2;
+    }];
+}
+
+-(IBAction)buttonViewFromBottom:(id)sender {
+    
+    NSLog(@"Ejecutando buttonViewFromBottom");
+    
+    
+    [UIView animateWithDuration:3 animations:^{
+        subviewFromBottom.alpha = 0.5;
+        CGPoint p = subviewFromBottom.center;
+        CGSize size = [[UIScreen mainScreen] bounds].size;
+        p.y = size.height;
+        subviewFromBottom.center = p;
+        CGPoint p2 = subviewFromBottom.center;
+        p2.y = size.height- [subviewFromBottom frame].size.height/2;
+        subviewFromBottom.center = p2;
+    }];
+}
+
+
 - (void)viewDidLoad
 {
+    NSLog(@"Se ejecuto viewdidload");
+    subviewFromTop.alpha = 0;
+    subviewFromBottom.alpha = 0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
