@@ -21,7 +21,7 @@
 
 -(IBAction)buttonViewFromTop:(id)sender {
     
-    NSLog(@"Ejecutando buttonViewFromTop");
+    NSLog(@"Running buttonViewFromTop");
     
     
     [UIView animateWithDuration:3 animations:^{
@@ -37,7 +37,7 @@
 
 -(IBAction)buttonViewFromBottom:(id)sender {
     
-    NSLog(@"Ejecutando buttonViewFromBottom");
+    NSLog(@"Running buttonViewFromBottom");
     
     
     [UIView animateWithDuration:3 animations:^{
@@ -55,7 +55,7 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"Se ejecuto viewdidload");
+    NSLog(@"Running viewdidload");
     subviewFromTop.alpha = 0;
     subviewFromBottom.alpha = 0;
     [super viewDidLoad];
